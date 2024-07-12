@@ -5,3 +5,6 @@ langchain==0.2.1
 pinecone-notebooks==0.1.1
 jupyterlab
 google
+langchain
+pinecone-client
+jupyter
