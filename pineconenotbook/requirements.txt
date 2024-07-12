@@ -8,3 +8,4 @@ google
 langchain
 pinecone-client
 jupyter
+streamlit
