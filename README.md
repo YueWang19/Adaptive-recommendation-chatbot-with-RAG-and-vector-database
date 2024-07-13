@@ -85,7 +85,7 @@ This project is an adaptive recommendation chatbot designed for wedding music pl
 
 - **Contextual Relevance**: Retrieves specific information from a predefined set of documents, ensuring answers are relevant to the user's query.
 - **Accuracy**: Combines retrieval and generation techniques to provide precise and accurate answers based on structured data.
-- **Enhanced User Experience**: Designed to answer questions related to Northeastern University's Cooperative Education program, providing users with reliable and detailed information.
+- **Enhanced User Experience**: Designed to answer questions related to wedding music, providing users with reliable and detailed information.
 
 ## Conclusion
 
