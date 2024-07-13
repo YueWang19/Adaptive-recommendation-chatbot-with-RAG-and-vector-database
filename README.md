@@ -4,6 +4,12 @@
 
 This project is an adaptive recommendation chatbot designed for wedding music planning. It leverages Retrieval-Augmented Generation (RAG) and a vector database to provide precise and contextually relevant music suggestions for various wedding moments. Unlike general LLM responses, this chatbot retrieves specific information from a curated wedding music dataset before generating recommendations, ensuring more accurate and personalized song choices. Whether it's selecting the perfect first dance song, finding background music for the reception, or choosing a heartfelt track for the ceremony, this chatbot offers tailored music recommendations to enhance the wedding experience.
 
+## Demonstration video
+
+You can check the feature demo from my Youtube channel:
+
+https://www.youtube.com/watch?v=g2-sTxfiuoQ
+
 ## Features
 
 - **Contextual Q&A**: Provides precise answers based on specific documents.

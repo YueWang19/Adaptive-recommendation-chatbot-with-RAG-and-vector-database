@@ -38,8 +38,13 @@ st.markdown("""
 st.markdown("## 👰 🤵 Wedding music recommendation Chatbot")
 st.markdown("Welcome! How can I assist you today?")
 
-# Input box for user query
-query = st.text_input("Enter your question:")
+# # Input box for user query
+# query = st.text_input("Enter your question:")
+
+# Form for user query input and submit button
+with st.form(key='query_form', clear_on_submit=True):
+    query = st.text_input("Enter your question:")
+    submit_button = st.form_submit_button(label='Ask')
 
 # Process user query
 if query:
@@ -64,20 +69,5 @@ for chat in reversed(st.session_state.history):
                 <div>{chat["message"]}</div>
             </div>
             """, unsafe_allow_html=True)
+        
 
-# # Display conversation history
-# for chat in st.session_state.history:
-#     if chat["is_user"]:
-#         st.markdown(f"""
-#             <div class="user-message">
-#                 <div class="user-image">👰</div>
-#                 <div>{chat["message"]}</div>
-#             </div>
-#             """, unsafe_allow_html=True)
-#     else:
-#         st.markdown(f"""
-#             <div class="bot-message">
-#                 <div class="bot-image">😊</div>
-#                 <div>{chat["message"]}</div>
-#             </div>
-#             """, unsafe_allow_html=True)
