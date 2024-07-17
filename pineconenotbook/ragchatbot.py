@@ -516,15 +516,15 @@ time.sleep(1)
 
 index = pc.Index(index_name)
 
-# for ids in index.list(namespace=namespace):
-#     query = index.query(
-#         id=ids[0],
-#         namespace=namespace,
-#         top_k=1,
-#         include_values=True,
-#         include_metadata=True
-#     )
-#     print(query)
+for ids in index.list(namespace=namespace):
+    query = index.query(
+        id=ids[0],
+        namespace=namespace,
+        top_k=2,
+        include_values=True,
+        include_metadata=True
+    )
+    # print(query)
 
 # Initialize the LLM and QA system
 llm = ChatOpenAI(

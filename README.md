@@ -104,6 +104,12 @@ Meditation from Thais is too quiet for a first dance track
 
 So I adjust the temperature to 0.2 to give more creative space
 
+![alt text](image-2.png)
+![alt text](image-3.png)
+![alt text](image-4.png)
+
+Answers of query "What are your recommendation for wedding hold indoor?" with top_k=1 were a mix of classical and pop music, and when top_k=2 or 3, the five recommended songs were in the same style and all were pop music, so top_k=2 was chosen.
+
 ## Conclusion
 
 This adaptive recommendation chatbot enhances the traditional capabilities of LLMs by integrating retrieval-based methods with a vector database, providing users with accurate and contextually relevant answers. The use of Streamlit for the frontend ensures a user-friendly interface for interacting with the chatbot.
