@@ -23,8 +23,8 @@ embeddings = OpenAIEmbeddings(
 )
 
 # Define index and namespace
-index_name = "music-bot"
-namespace = "weddingmusicvector"
+index_name = "wedding-music-bot"
+namespace = "weddingvector"
 
 # Setup Pinecone index
 cloud = os.environ.get('PINECONE_CLOUD') or 'aws'
@@ -50,449 +50,450 @@ This dataset is designed to provide a selection of songs suitable for weddings, 
 
 ### Music Entries
 
-- **Perfect**
-  - **Artist**: Ed Sheeran
-  - **Genre**: Pop
-  - **Year**: 2017
-  - **Description**: A romantic ballad ideal for the first dance.
-  - **Popularity**: 92
-  - **Duration (ms)**: 263400
-  - **Explicit**: No
-  - **Album**: Divide
+## Perfect
+- **Artist**: Ed Sheeran
+- **Genre**: Pop
+- **Year**: 2017
+- **Description**: A romantic ballad ideal for the first dance.
+- **Popularity**: 92
+- **Duration (ms)**: 263400
+- **Explicit**: No
+- **Album**: Divide
 
-- **All of Me**
-  - **Artist**: John Legend
-  - **Genre**: R&B
-  - **Year**: 2013
-  - **Description**: A soulful love song perfect for the first dance.
-  - **Popularity**: 95
-  - **Duration (ms)**: 269000
-  - **Explicit**: No
-  - **Album**: Love in the Future
+## All of Me
+- **Artist**: John Legend
+- **Genre**: R&B
+- **Year**: 2013
+- **Description**: A soulful love song perfect for the first dance.
+- **Popularity**: 95
+- **Duration (ms)**: 269000
+- **Explicit**: No
+- **Album**: Love in the Future
 
-- **A Thousand Years**
-  - **Artist**: Christina Perri
-  - **Genre**: Pop
-  - **Year**: 2011
-  - **Description**: A beautiful ballad often used during the ceremony.
-  - **Popularity**: 90
-  - **Duration (ms)**: 285400
-  - **Explicit**: No
-  - **Album**: The Twilight Saga: Breaking Dawn – Part 1 (Original Motion Picture Soundtrack)
+## A Thousand Years
+- **Artist**: Christina Perri
+- **Genre**: Pop
+- **Year**: 2011
+- **Description**: A beautiful ballad often used during the ceremony.
+- **Popularity**: 90
+- **Duration (ms)**: 285400
+- **Explicit**: No
+- **Album**: The Twilight Saga: Breaking Dawn – Part 1 (Original Motion Picture Soundtrack)
 
-- **Marry Me**
-  - **Artist**: Train
-  - **Genre**: Pop Rock
-  - **Year**: 2009
-  - **Description**: A romantic song perfect for the proposal or ceremony.
-  - **Popularity**: 88
-  - **Duration (ms)**: 221640
-  - **Explicit**: No
-  - **Album**: Save Me, San Francisco
+## Marry Me
+- **Artist**: Train
+- **Genre**: Pop Rock
+- **Year**: 2009
+- **Description**: A romantic song perfect for the proposal or ceremony.
+- **Popularity**: 88
+- **Duration (ms)**: 221640
+- **Explicit**: No
+- **Album**: Save Me, San Francisco
 
-- **Can't Help Falling in Love**
-  - **Artist**: Elvis Presley
-  - **Genre**: Rock
-  - **Year**: 1961
-  - **Description**: A classic love song perfect for any wedding moment.
-  - **Popularity**: 94
-  - **Duration (ms)**: 178000
-  - **Explicit**: No
-  - **Album**: Blue Hawaii
+## Can't Help Falling in Love
+- **Artist**: Elvis Presley
+- **Genre**: Rock
+- **Year**: 1961
+- **Description**: A classic love song perfect for any wedding moment.
+- **Popularity**: 94
+- **Duration (ms)**: 178000
+- **Explicit**: No
+- **Album**: Blue Hawaii
 
-- **I Don't Want to Miss a Thing**
-  - **Artist**: Aerosmith
-  - **Genre**: Rock
-  - **Year**: 1998
-  - **Description**: A powerful rock ballad ideal for the first dance.
-  - **Popularity**: 89
-  - **Duration (ms)**: 300300
-  - **Explicit**: No
-  - **Album**: Armageddon: The Album
+## I Don't Want to Miss a Thing
+- **Artist**: Aerosmith
+- **Genre**: Rock
+- **Year**: 1998
+- **Description**: A powerful rock ballad ideal for the first dance.
+- **Popularity**: 89
+- **Duration (ms)**: 300300
+- **Explicit**: No
+- **Album**: Armageddon: The Album
 
-- **Thinking Out Loud**
-  - **Artist**: Ed Sheeran
-  - **Genre**: Pop
-  - **Year**: 2014
-  - **Description**: A romantic ballad perfect for the first dance.
-  - **Popularity**: 93
-  - **Duration (ms)**: 281400
-  - **Explicit**: No
-  - **Album**: x
+## Thinking Out Loud
+- **Artist**: Ed Sheeran
+- **Genre**: Pop
+- **Year**: 2014
+- **Description**: A romantic ballad perfect for the first dance.
+- **Popularity**: 93
+- **Duration (ms)**: 281400
+- **Explicit**: No
+- **Album**: x
 
-- **You Are the Best Thing**
-  - **Artist**: Ray LaMontagne
-  - **Genre**: Soul
-  - **Year**: 2008
-  - **Description**: A soulful song ideal for the reception.
-  - **Popularity**: 85
-  - **Duration (ms)**: 221600
-  - **Explicit**: No
-  - **Album**: Gossip in the Grain
+## You Are the Best Thing
+- **Artist**: Ray LaMontagne
+- **Genre**: Soul
+- **Year**: 2008
+- **Description**: A soulful song ideal for the reception.
+- **Popularity**: 85
+- **Duration (ms)**: 221600
+- **Explicit**: No
+- **Album**: Gossip in the Grain
 
-- **At Last**
-  - **Artist**: Etta James
-  - **Genre**: Blues
-  - **Year**: 1960
-  - **Description**: A timeless classic perfect for the first dance.
-  - **Popularity**: 91
-  - **Duration (ms)**: 182600
-  - **Explicit**: No
-  - **Album**: At Last!
+## At Last
+- **Artist**: Etta James
+- **Genre**: Blues
+- **Year**: 1960
+- **Description**: A timeless classic perfect for the first dance.
+- **Popularity**: 91
+- **Duration (ms)**: 182600
+- **Explicit**: No
+- **Album**: At Last!
 
-- **Make You Feel My Love**
-  - **Artist**: Adele
-  - **Genre**: Pop
-  - **Year**: 2008
-  - **Description**: A heartfelt ballad suitable for any wedding moment.
-  - **Popularity**: 88
-  - **Duration (ms)**: 215200
-  - **Explicit**: No
-  - **Album**: 19
+## Make You Feel My Love
+- **Artist**: Adele
+- **Genre**: Pop
+- **Year**: 2008
+- **Description**: A heartfelt ballad suitable for any wedding moment.
+- **Popularity**: 88
+- **Duration (ms)**: 215200
+- **Explicit**: No
+- **Album**: 19
 
-- **From This Moment On**
-  - **Artist**: Shania Twain
-  - **Genre**: Country
-  - **Year**: 1997
-  - **Description**: A romantic country ballad ideal for the ceremony or first dance.
-  - **Popularity**: 87
-  - **Duration (ms)**: 229000
-  - **Explicit**: No
-  - **Album**: Come On Over
+## From This Moment On
+- **Artist**: Shania Twain
+- **Genre**: Country
+- **Year**: 1997
+- **Description**: A romantic country ballad ideal for the ceremony or first dance.
+- **Popularity**: 87
+- **Duration (ms)**: 229000
+- **Explicit**: No
+- **Album**: Come On Over
 
-- **Better Together**
-  - **Artist**: Jack Johnson
-  - **Genre**: Folk
-  - **Year**: 2005
-  - **Description**: A laid-back love song perfect for the reception.
-  - **Popularity**: 84
-  - **Duration (ms)**: 207600
-  - **Explicit**: No
-  - **Album**: In Between Dreams
+## Better Together
+- **Artist**: Jack Johnson
+- **Genre**: Folk
+- **Year**: 2005
+- **Description**: A laid-back love song perfect for the reception.
+- **Popularity**: 84
+- **Duration (ms)**: 207600
+- **Explicit**: No
+- **Album**: In Between Dreams
 
-- **Here Comes the Sun**
-  - **Artist**: The Beatles
-  - **Genre**: Rock
-  - **Year**: 1969
-  - **Description**: A cheerful and uplifting song ideal for the ceremony.
-  - **Popularity**: 89
-  - **Duration (ms)**: 185000
-  - **Explicit**: No
-  - **Album**: Abbey Road
+## Here Comes the Sun
+- **Artist**: The Beatles
+- **Genre**: Rock
+- **Year**: 1969
+- **Description**: A cheerful and uplifting song ideal for the ceremony.
+- **Popularity**: 89
+- **Duration (ms)**: 185000
+- **Explicit**: No
+- **Album**: Abbey Road
 
-- **The Way You Look Tonight**
-  - **Artist**: Frank Sinatra
-  - **Genre**: Jazz
-  - **Year**: 1964
-  - **Description**: A classic love song perfect for the first dance.
-  - **Popularity**: 90
-  - **Duration (ms)**: 210000
-  - **Explicit**: No
-  - **Album**: Sinatra Sings Days of Wine and Roses, Moon River, and Other Academy Award Winners
+## The Way You Look Tonight
+- **Artist**: Frank Sinatra
+- **Genre**: Jazz
+- **Year**: 1964
+- **Description**: A classic love song perfect for the first dance.
+- **Popularity**: 90
+- **Duration (ms)**: 210000
+- **Explicit**: No
+- **Album**: Sinatra Sings Days of Wine and Roses, Moon River, and Other Academy Award Winners
 
-- **My Girl**
-  - **Artist**: The Temptations
-  - **Genre**: R&B
-  - **Year**: 1965
-  - **Description**: A feel-good classic ideal for the reception.
-  - **Popularity**: 88
-  - **Duration (ms)**: 166000
-  - **Explicit**: No
-  - **Album**: The Temptations Sing Smokey
+## My Girl
+- **Artist**: The Temptations
+- **Genre**: R&B
+- **Year**: 1965
+- **Description**: A feel-good classic ideal for the reception.
+- **Popularity**: 88
+- **Duration (ms)**: 166000
+- **Explicit**: No
+- **Album**: The Temptations Sing Smokey
 
-- **Endless Love**
-  - **Artist**: Diana Ross & Lionel Richie
-  - **Genre**: R&B
-  - **Year**: 1981
-  - **Description**: A duet perfect for the first dance or ceremony.
-  - **Popularity**: 91
-  - **Duration (ms)**: 262000
-  - **Explicit**: No
-  - **Album**: Endless Love Soundtrack
+## Endless Love
+- **Artist**: Diana Ross & Lionel Richie
+- **Genre**: R&B
+- **Year**: 1981
+- **Description**: A duet perfect for the first dance or ceremony.
+- **Popularity**: 91
+- **Duration (ms)**: 262000
+- **Explicit**: No
+- **Album**: Endless Love Soundtrack
 
-- **Isn't She Lovely**
-  - **Artist**: Stevie Wonder
-  - **Genre**: R&B
-  - **Year**: 1976
-  - **Description**: A joyful song perfect for celebrating the bride.
-  - **Popularity**: 87
-  - **Duration (ms)**: 376200
-  - **Explicit**: No
-  - **Album**: Songs in the Key of Life
+## Isn't She Lovely
+- **Artist**: Stevie Wonder
+- **Genre**: R&B
+- **Year**: 1976
+- **Description**: A joyful song perfect for celebrating the bride.
+- **Popularity**: 87
+- **Duration (ms)**: 376200
+- **Explicit**: No
+- **Album**: Songs in the Key of Life
 
-- **Marry You**
-  - **Artist**: Bruno Mars
-  - **Genre**: Pop
-  - **Year**: 2010
-  - **Description**: A fun and upbeat song ideal for the reception.
-  - **Popularity**: 89
-  - **Duration (ms)**: 225800
-  - **Explicit**: No
-  - **Album**: Doo-Wops & Hooligans
+## Marry You
+- **Artist**: Bruno Mars
+- **Genre**: Pop
+- **Year**: 2010
+- **Description**: A fun and upbeat song ideal for the reception.
+- **Popularity**: 89
+- **Duration (ms)**: 225800
+- **Explicit**: No
+- **Album**: Doo-Wops & Hooligans
 
-- **L-O-V-E**
-  - **Artist**: Nat King Cole
-  - **Genre**: Jazz
-  - **Year**: 1965
-  - **Description**: A timeless jazz classic perfect for any wedding moment.
-  - **Popularity**: 85
-  - **Duration (ms)**: 146000
-  - **Explicit**: No
-  - **Album**: L-O-V-E
+## L-O-V-E
+- **Artist**: Nat King Cole
+- **Genre**: Jazz
+- **Year**: 1965
+- **Description**: A timeless jazz classic perfect for any wedding moment.
+- **Popularity**: 85
+- **Duration (ms)**: 146000
+- **Explicit**: No
+- **Album**: L-O-V-E
 
-- **Everything**
-  - **Artist**: Michael Bublé
-  - **Genre**: Jazz
-  - **Year**: 2007
-  - **Description**: A jazzy love song ideal for the first dance or reception.
-  - **Popularity**: 86
-  - **Duration (ms)**: 230000
-  - **Explicit**: No
-  - **Album**: Call Me Irresponsible
+## Everything
+- **Artist**: Michael Bublé
+- **Genre**: Jazz
+- **Year**: 2007
+- **Description**: A jazzy love song ideal for the first dance or reception.
+- **Popularity**: 86
+- **Duration (ms)**: 230000
+- **Explicit**: No
+- **Album**: Call Me Irresponsible
 
-- **You Make My Dreams**
-  - **Artist**: Daryl Hall & John Oates
-  - **Genre**: Pop Rock
-  - **Year**: 1980
-  - **Description**: An upbeat, feel-good song perfect for the reception.
-  - **Popularity**: 87
-  - **Duration (ms)**: 188000
-  - **Explicit**: No
-  - **Album**: Voices
+## You Make My Dreams
+- **Artist**: Daryl Hall & John Oates
+- **Genre**: Pop Rock
+- **Year**: 1980
+- **Description**: An upbeat, feel-good song perfect for the reception.
+- **Popularity**: 87
+- **Duration (ms)**: 188000
+- **Explicit**: No
+- **Album**: Voices
 
-- **Ho Hey**
-  - **Artist**: The Lumineers
-  - **Genre**: Indie Folk
-  - **Year**: 2012
-  - **Description**: A catchy indie folk song ideal for the reception.
-  - **Popularity**: 88
-  - **Duration (ms)**: 163000
-  - **Explicit**: No
-  - **Album**: The Lumineers
+## Ho Hey
+- **Artist**: The Lumineers
+- **Genre**: Indie Folk
+- **Year**: 2012
+- **Description**: A catchy indie folk song ideal for the reception.
+- **Popularity**: 88
+- **Duration (ms)**: 163000
+- **Explicit**: No
+- **Album**: The Lumineers
 
-- **I Will Always Love You**
-  - **Artist**: Whitney Houston
-  - **Genre**: R&B
-  - **Year**: 1992
-  - **Description**: A powerful ballad perfect for the first dance.
-  - **Popularity**: 92
-  - **Duration (ms)**: 273000
-  - **Explicit**: No
-  - **Album**: The Bodyguard: Original Soundtrack Album
+## I Will Always Love You
+- **Artist**: Whitney Houston
+- **Genre**: R&B
+- **Year**: 1992
+- **Description**: A powerful ballad perfect for the first dance.
+- **Popularity**: 92
+- **Duration (ms)**: 273000
+- **Explicit**: No
+- **Album**: The Bodyguard: Original Soundtrack Album
 
-- **I Choose You**
-  - **Artist**: Sara Bareilles
-  - **Genre**: Pop
-  - **Year**: 2013
-  - **Description**: A heartfelt song ideal for the ceremony or first dance.
-  - **Popularity**: 85
-  - **Duration (ms)**: 263800
-  - **Explicit**: No
-  - **Album**: The Blessed Unrest
+## I Choose You
+- **Artist**: Sara Bareilles
+- **Genre**: Pop
+- **Year**: 2013
+- **Description**: A heartfelt song ideal for the ceremony or first dance.
+- **Popularity**: 85
+- **Duration (ms)**: 263800
+- **Explicit**: No
+- **Album**: The Blessed Unrest
 
-- **Happy**
-  - **Artist**: Pharrell Williams
-  - **Genre**: Pop
-  - **Year**: 2013
-  - **Description**: An upbeat and joyful song perfect for the reception.
-  - **Popularity**: 90
-  - **Duration (ms)**: 233000
-  - **Explicit**: No
-  - **Album**: G I R L
+## Happy
+- **Artist**: Pharrell Williams
+- **Genre**: Pop
+- **Year**: 2013
+- **Description**: An upbeat and joyful song perfect for the reception.
+- **Popularity**: 90
+- **Duration (ms)**: 233000
+- **Explicit**: No
+- **Album**: G I R L
 
-- **Home**
-  - **Artist**: Edward Sharpe & The Magnetic Zeros
-  - **Genre**: Indie Folk
-  - **Year**: 2010
-  - **Description**: A whimsical indie folk song ideal for the reception.
-  - **Popularity**: 87
-  - **Duration (ms)**: 325000
-  - **Explicit**: No
-  - **Album**: Up from Below
+## Home
+- **Artist**: Edward Sharpe & The Magnetic Zeros
+- **Genre**: Indie Folk
+- **Year**: 2010
+- **Description**: A whimsical indie folk song ideal for the reception.
+- **Popularity**: 87
+- **Duration (ms)**: 325000
+- **Explicit**: No
+- **Album**: Up from Below
 
-- **Your Song**
-  - **Artist**: Elton John
-  - **Genre**: Pop
-  - **Year**: 1970
-  - **Description**: A classic love song perfect for any wedding moment.
-  - **Popularity**: 88
-  - **Duration (ms)**: 241000
-  - **Explicit**: No
-  - **Album**: Elton John
+## Your Song
+- **Artist**: Elton John
+- **Genre**: Pop
+- **Year**: 1970
+- **Description**: A classic love song perfect for any wedding moment.
+- **Popularity**: 88
+- **Duration (ms)**: 241000
+- **Explicit**: No
+- **Album**: Elton John
 
-- **Just the Way You Are**
-  - **Artist**: Bruno Mars
-  - **Genre**: Pop
-  - **Year**: 2010
-  - **Description**: A sweet and romantic song perfect for the first dance.
-  - **Popularity**: 91
-  - **Duration (ms)**: 220000
-  - **Explicit**: No
-  - **Album**: Doo-Wops & Hooligans
+## Just the Way You Are
+- **Artist**: Bruno Mars
+- **Genre**: Pop
+- **Year**: 2010
+- **Description**: A sweet and romantic song perfect for the first dance.
+- **Popularity**: 91
+- **Duration (ms)**: 220000
+- **Explicit**: No
+- **Album**: Doo-Wops & Hooligans
 
-- **Wonderful Tonight**
-  - **Artist**: Eric Clapton
-  - **Genre**: Rock
-  - **Year**: 1977
-  - **Description**: A romantic rock ballad ideal for the first dance.
-  - **Popularity**: 89
-  - **Duration (ms)**: 216000
-  - **Explicit**: No
-  - **Album**: Slowhand
+## Wonderful Tonight
+- **Artist**: Eric Clapton
+- **Genre**: Rock
+- **Year**: 1977
+- **Description**: A romantic rock ballad ideal for the first dance.
+- **Popularity**: 89
+- **Duration (ms)**: 216000
+- **Explicit**: No
+- **Album**: Slowhand
 
-- **I’m Yours**
-  - **Artist**: Jason Mraz
-  - **Genre**: Pop
-  - **Year**: 2008
-  - **Description**: A feel-good, laid-back song ideal for the reception.
-  - **Popularity**: 89
-  - **Duration (ms)**: 242000
-  - **Explicit**: No
-  - **Album**: We Sing. We Dance. We Steal Things.
+## I’m Yours
+- **Artist**: Jason Mraz
+- **Genre**: Pop
+- **Year**: 2008
+- **Description**: A feel-good, laid-back song ideal for the reception.
+- **Popularity**: 89
+- **Duration (ms)**: 242000
+- **Explicit**: No
+- **Album**: We Sing. We Dance. We Steal Things.
 
-- **You and Me**
-  - **Artist**: Lifehouse
-  - **Genre**: Rock
-  - **Year**: 2005
-  - **Description**: A romantic rock song perfect for the first dance.
-  - **Popularity**: 85
-  - **Duration (ms)**: 235000
-  - **Explicit**: No
-  - **Album**: Lifehouse
+## You and Me
+- **Artist**: Lifehouse
+- **Genre**: Rock
+- **Year**: 2005
+- **Description**: A romantic rock song perfect for the first dance.
+- **Popularity**: 85
+- **Duration (ms)**: 235000
+- **Explicit**: No
+- **Album**: Lifehouse
 
-- **You Are the Love of My Life**
-  - **Artist**: Sam Cooke
-  - **Genre**: Soul
-  - **Year**: 1964
-  - **Description**: A classic soul song ideal for the ceremony.
-  - **Popularity**: 85
-  - **Duration (ms)**: 200000
-  - **Explicit**: No
-  - **Album**: Ain't That Good News
+## You Are the Love of My Life
+- **Artist**: Sam Cooke
+- **Genre**: Soul
+- **Year**: 1964
+- **Description**: A classic soul song ideal for the ceremony.
+- **Popularity**: 85
+- **Duration (ms)**: 200000
+- **Explicit**: No
+- **Album**: Ain't That Good News
 
-- **I Will Follow You into the Dark**
-  - **Artist**: Death Cab for Cutie
-  - **Genre**: Indie Rock
-  - **Year**: 2005
-  - **Description**: A touching indie rock ballad suitable for the ceremony.
-  - **Popularity**: 86
-  - **Duration (ms)**: 215000
-  - **Explicit**: No
-  - **Album**: Plans
+## I Will Follow You into the Dark
+- **Artist**: Death Cab for Cutie
+- **Genre**: Indie Rock
+- **Year**: 2005
+- **Description**: A touching indie rock ballad suitable for the ceremony.
+- **Popularity**: 86
+- **Duration (ms)**: 215000
+- **Explicit**: No
+- **Album**: Plans
 
-- **Love Me Like You Do**
-  - **Artist**: Ellie Goulding
-  - **Genre**: Pop
-  - **Year**: 2015
-  - **Description**: A pop love song ideal for the first dance or reception.
-  - **Popularity**: 89
-  - **Duration (ms)**: 251000
-  - **Explicit**: No
-  - **Album**: Fifty Shades of Grey (Original Motion Picture Soundtrack)
+## Love Me Like You Do
+- **Artist**: Ellie Goulding
+- **Genre**: Pop
+- **Year**: 2015
+- **Description**: A pop love song ideal for the first dance or reception.
+- **Popularity**: 89
+- **Duration (ms)**: 251000
+- **Explicit**: No
+- **Album**: Fifty Shades of Grey (Original Motion Picture Soundtrack)
 
-- **Halo**
-  - **Artist**: Beyoncé
-  - **Genre**: Pop
-  - **Year**: 2008
-  - **Description**: A powerful love song perfect for the first dance.
-  - **Popularity**: 92
-  - **Duration (ms)**: 261000
-  - **Explicit**: No
-  - **Album**: I Am... Sasha Fierce
+## Halo
+- **Artist**: Beyoncé
+- **Genre**: Pop
+- **Year**: 2008
+- **Description**: A powerful love song perfect for the first dance.
+- **Popularity**: 92
+- **Duration (ms)**: 261000
+- **Explicit**: No
+- **Album**: I Am... Sasha Fierce
 
-- **Marry Me**
-  - **Artist**: Jason Derulo
-  - **Genre**: Pop
-  - **Year**: 2013
-  - **Description**: A romantic pop song perfect for the proposal or first dance.
-  - **Popularity**: 86
-  - **Duration (ms)**: 218000
-  - **Explicit**: No
-  - **Album**: Tattoos
+## Marry Me
+- **Artist**: Jason Derulo
+- **Genre**: Pop
+- **Year**: 2013
+- **Description**: A romantic pop song perfect for the proposal or first dance.
+- **Popularity**: 86
+- **Duration (ms)**: 218000
+- **Explicit**: No
+- **Album**: Tattoos
 
-- **Speechless**
-  - **Artist**: Dan + Shay
-  - **Genre**: Country
-  - **Year**: 2018
-  - **Description**: A romantic country song ideal for the first dance.
-  - **Popularity**: 87
-  - **Duration (ms)**: 213000
-  - **Explicit**: No
-  - **Album**: Dan + Shay
+## Speechless
+- **Artist**: Dan + Shay
+- **Genre**: Country
+- **Year**: 2018
+- **Description**: A romantic country song ideal for the first dance.
+- **Popularity**: 87
+- **Duration (ms)**: 213000
+- **Explicit**: No
+- **Album**: Dan + Shay
 
-- **Die a Happy Man**
-  - **Artist**: Thomas Rhett
-  - **Genre**: Country
-  - **Year**: 2015
-  - **Description**: A heartfelt country song perfect for the first dance.
-  - **Popularity**: 88
-  - **Duration (ms)**: 235000
-  - **Explicit**: No
-  - **Album**: Tangled Up
+## Die a Happy Man
+- **Artist**: Thomas Rhett
+- **Genre**: Country
+- **Year**: 2015
+- **Description**: A heartfelt country song perfect for the first dance.
+- **Popularity**: 88
+- **Duration (ms)**: 235000
+- **Explicit**: No
+- **Album**: Tangled Up
 
-- **XO**
-  - **Artist**: Beyoncé
-  - **Genre**: Pop
-  - **Year**: 2013
-  - **Description**: A heartfelt love song ideal for the reception.
-  - **Popularity**: 85
-  - **Duration (ms)**: 209000
-  - **Explicit**: No
-  - **Album**: Beyoncé
+## XO
+- **Artist**: Beyoncé
+- **Genre**: Pop
+- **Year**: 2013
+- **Description**: A heartfelt love song ideal for the reception.
+- **Popularity**: 85
+- **Duration (ms)**: 209000
+- **Explicit**: No
+- **Album**: Beyoncé
 
-- **Best Day of My Life**
-  - **Artist**: American Authors
-  - **Genre**: Indie Rock
-  - **Year**: 2014
-  - **Description**: An upbeat indie rock song perfect for the reception.
-  - **Popularity**: 88
-  - **Duration (ms)**: 205000
-  - **Explicit**: No
-  - **Album**: Oh, What a Life
+## Best Day of My Life
+- **Artist**: American Authors
+- **Genre**: Indie Rock
+- **Year**: 2014
+- **Description**: An upbeat indie rock song perfect for the reception.
+- **Popularity**: 88
+- **Duration (ms)**: 205000
+- **Explicit**: No
+- **Album**: Oh, What a Life
 
-- **Latch (Acoustic)**
-  - **Artist**: Sam Smith
-  - **Genre**: Pop
-  - **Year**: 2013
-  - **Description**: A stripped-down, acoustic love song ideal for the first dance.
-  - **Popularity**: 86
-  - **Duration (ms)**: 187000
-  - **Explicit**: No
-  - **Album**: In the Lonely Hour (Drowning Shadows Edition)
+## Latch (Acoustic)
+- **Artist**: Sam Smith
+- **Genre**: Pop
+- **Year**: 2013
+- **Description**: A stripped-down, acoustic love song ideal for the first dance.
+- **Popularity**: 86
+- **Duration (ms)**: 187000
+- **Explicit**: No
+- **Album**: In the Lonely Hour (Drowning Shadows Edition)
 
-- **To Make You Feel My Love**
-  - **Artist**: Bob Dylan
-  - **Genre**: Folk
-  - **Year**: 1997
-  - **Description**: A classic folk love song perfect for the ceremony or first dance.
-  - **Popularity**: 84
-  - **Duration (ms)**: 200000
-  - **Explicit**: No
-  - **Album**: Time Out of Mind
+## To Make You Feel My Love
+- **Artist**: Bob Dylan
+- **Genre**: Folk
+- **Year**: 1997
+- **Description**: A classic folk love song perfect for the ceremony or first dance.
+- **Popularity**: 84
+- **Duration (ms)**: 200000
+- **Explicit**: No
+- **Album**: Time Out of Mind
 
-- **Lucky**
-  - **Artist**: Jason Mraz & Colbie Caillat
-  - **Genre**: Pop
-  - **Year**: 2008
-  - **Description**: A duet ideal for the first dance or reception.
-  - **Popularity**: 85
-  - **Duration (ms)**: 202000
-  - **Explicit**: No
-  - **Album**: We Sing. We Dance. We Steal Things.
+## Lucky
+- **Artist**: Jason Mraz & Colbie Caillat
+- **Genre**: Pop
+- **Year**: 2008
+- **Description**: A duet ideal for the first dance or reception.
+- **Popularity**: 85
+- **Duration (ms)**: 202000
+- **Explicit**: No
+- **Album**: We Sing. We Dance. We Steal Things.
 
-- **You’re Still the One**
-  - **Artist**: Shania Twain
-  - **Genre**: Country
-  - **Year**: 1997
-  - **Description**: A romantic country ballad perfect for the first dance.
-  - **Popularity**: 87
-  - **Duration (ms)**: 202000
-  - **Explicit**: No
-  - **Album**: Come On Over
+## You’re Still the One
+- **Artist**: Shania Twain
+- **Genre**: Country
+- **Year**: 1997
+- **Description**: A romantic country ballad perfect for the first dance.
+- **Popularity**: 87
+- **Duration (ms)**: 202000
+- **Explicit**: No
+- **Album**: Come On Over
 
 ## Conclusion
 
 This dataset provides a comprehensive collection of songs across various genres and years, perfect for generating music recommendations for weddings. Use this dataset to enhance the music recommendation capabilities of your chatbot.
+
 """
 
 
@@ -515,15 +516,15 @@ time.sleep(1)
 
 index = pc.Index(index_name)
 
-for ids in index.list(namespace=namespace):
-    query = index.query(
-        id=ids[0],
-        namespace=namespace,
-        top_k=1,
-        include_values=True,
-        include_metadata=True
-    )
-    print(query)
+# for ids in index.list(namespace=namespace):
+#     query = index.query(
+#         id=ids[0],
+#         namespace=namespace,
+#         top_k=1,
+#         include_values=True,
+#         include_metadata=True
+#     )
+#     print(query)
 
 # Initialize the LLM and QA system
 llm = ChatOpenAI(
@@ -558,14 +559,30 @@ If the user's query out of the scale of dataset, be polite to tell them who you 
     response = qa.invoke(full_query)
     return response['result']
 
-# Sample queries
-queries = [
+# Sample queries and comparation between chatbot with knowledge and without knowledge
+query1 = "What are your recommendation for wedding hold indoor?"
 
-    "What are the most popular wedding songs?"
-    "Give me advice about the wedding timelines" #Not related query
-]
+query2 = "I like classical music, give me some advice"
 
-if __name__ == "__main__":
-    for query in queries:
-        print(f"Query: {query}")
-        print(f"Answer: {get_answers(query)}\n")
+query3 = "What are the most popular song of spotify 2023?"
+
+query1_with_knowledge = qa.invoke(get_answers(query1))
+query1_without_knowledge = llm.invoke(query1)
+
+print(query1_with_knowledge)
+print()
+print(query1_without_knowledge)
+
+query2_with_knowledge = qa.invoke(get_answers(query2))
+query2_without_knowledge = llm.invoke(query2)
+
+print(query2_with_knowledge)
+print()
+print(query2_without_knowledge)
+
+query3_with_knowledge = qa.invoke(get_answers(query3))
+query3_without_knowledge = llm.invoke(query3)
+
+print(query3_with_knowledge)
+print()
+print(query3_without_knowledge)
