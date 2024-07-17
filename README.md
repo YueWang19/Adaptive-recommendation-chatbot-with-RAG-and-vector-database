@@ -99,6 +99,11 @@ https://www.youtube.com/watch?v=g2-sTxfiuoQ
 
 ![alt text](image-1.png)
 
+Spring from Vivaldi's "Four Seasons" is good for the wedding reception
+Meditation from Thais is too quiet for a first dance track
+
+So I adjust the temperature to 0.2 to give more creative space
+
 ## Conclusion
 
 This adaptive recommendation chatbot enhances the traditional capabilities of LLMs by integrating retrieval-based methods with a vector database, providing users with accurate and contextually relevant answers. The use of Streamlit for the frontend ensures a user-friendly interface for interacting with the chatbot.
