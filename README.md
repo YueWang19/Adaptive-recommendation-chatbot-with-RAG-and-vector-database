@@ -93,6 +93,12 @@ https://www.youtube.com/watch?v=g2-sTxfiuoQ
 - **Accuracy**: Combines retrieval and generation techniques to provide precise and accurate answers based on structured data.
 - **Enhanced User Experience**: Designed to answer questions related to wedding music, providing users with reliable and detailed information.
 
+## Performance comparation between different settings
+
+![alt text](image.png)
+
+![alt text](image-1.png)
+
 ## Conclusion
 
 This adaptive recommendation chatbot enhances the traditional capabilities of LLMs by integrating retrieval-based methods with a vector database, providing users with accurate and contextually relevant answers. The use of Streamlit for the frontend ensures a user-friendly interface for interacting with the chatbot.
