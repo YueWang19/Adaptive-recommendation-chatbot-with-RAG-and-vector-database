@@ -503,7 +503,7 @@ markdown_splitter = MarkdownHeaderTextSplitter(
 )
 md_header_splits = markdown_splitter.split_text(markdown_document)
 
-print(md_header_splits)
+# print(md_header_splits)
 
 # Create vector store
 docsearch = PineconeVectorStore.from_documents(
@@ -535,7 +535,8 @@ llm = ChatOpenAI(
 qa = RetrievalQA.from_chain_type(
     llm=llm,
     chain_type="stuff",
-    retriever=docsearch.as_retriever()
+    retriever=docsearch.as_retriever(),
+    return_source_documents=True #add to get the retrieval context
 )
 
 def get_answers(query):
@@ -555,34 +556,72 @@ When responding to queries, be polite, empathetic, and professional. Your goal i
 If the user's query out of the scale of dataset, be polite to tell them who you are and what you are specialize in, and professional tell them you do not know because it's not your are specialize in, invite the user to ask questions about wedding music.
 """
 
-    full_query = f"{persona} {query}"
-    response = qa.invoke(full_query)
-    return response['result']
+    # full_query = f"{persona} {query}" #this code will pass the prompt to the retriever, make the query too long
+    response = qa.invoke(query)
+    # return response['result']
+    return response
 
 # Sample queries and comparation between chatbot with knowledge and without knowledge
-query1 = "What are your recommendation for wedding hold indoor?"
+# query1 = "What are your recommendation for wedding hold indoor?"
 
-query2 = "I like classical music, give me some advice"
+# query2 = "I like classical music, give me some advice"
 
-query3 = "What are the most popular song of spotify 2023?"
+# query3 = "What are the most popular song of spotify 2023?"
 
-query1_with_knowledge = qa.invoke(get_answers(query1))
-query1_without_knowledge = llm.invoke(query1)
+# query1_with_knowledge = qa.invoke(get_answers(query1))
+# query1_without_knowledge = llm.invoke(query1)
 
-print(query1_with_knowledge)
-print()
-print(query1_without_knowledge)
+# print(query1_with_knowledge)
+# print()
+# print(query1_without_knowledge)
 
-query2_with_knowledge = qa.invoke(get_answers(query2))
-query2_without_knowledge = llm.invoke(query2)
+# query2_with_knowledge = qa.invoke(get_answers(query2))
+# query2_without_knowledge = llm.invoke(query2)
 
-print(query2_with_knowledge)
-print()
-print(query2_without_knowledge)
+# print(query2_with_knowledge)
+# print()
+# print(query2_without_knowledge)
 
-query3_with_knowledge = qa.invoke(get_answers(query3))
-query3_without_knowledge = llm.invoke(query3)
+# query3_with_knowledge = qa.invoke(get_answers(query3))
+# query3_without_knowledge = llm.invoke(query3)
 
-print(query3_with_knowledge)
-print()
-print(query3_without_knowledge)
+# print(query3_with_knowledge)
+# print()
+# print(query3_without_knowledge)
+
+# calculate retrieve performance
+
+def retrieve_context_of_v1(query):
+    print("Test the version1 context=======")
+    response = get_answers(query)
+    print("=========chatbot v1 retrieval context and generated answer=========")
+    print("Query:",query)
+    print("\n\n")
+    print("Generated Answer:",f"{response['result']}")
+    print("\n\n")
+    print("Retrieve Contexts",f"{response['source_documents']}")
+    print("\n\n")
+
+query1 = "Can you recommend some songs for a beach wedding ceremony?"
+query2 = "What are some classical music suitable for the first dance"
+query3 = "What's the most popular song 2023?"
+
+retrieve_context_of_v1(query1)
+retrieve_context_of_v1(query2)
+retrieve_context_of_v1(query3)
+
+def measure_response_time(query, top_k):
+    start_time = time.time()
+    docs = retrieve_context_of_v1(query)
+    answer = get_answers(query)
+    end_time = time.time()
+    response_time = end_time - start_time
+    print("Generated Answer:")
+    print(answer)
+    print(f"Response Time: {response_time} seconds")
+    return response_time
+
+response_time = measure_response_time(query1,2)
+response_time = measure_response_time(query2,2)
+response_time = measure_response_time(query3,2)
+

@@ -48,7 +48,7 @@ with st.form(key='query_form', clear_on_submit=True):
 
 # Process user query
 if query:
-    answer = get_answers(query)
+    answer = get_answers(query)['result']
     # Add user query and bot response to conversation history
     st.session_state.history.append({"message": query, "is_user": True})
     st.session_state.history.append({"message": answer, "is_user": False})
